@@ -22,7 +22,7 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', form);
+      const res = await axios.post('https://multi-level-referral-and-earning-system-geln.onrender.com/api/auth/register', form);
       dispatch(loginSuccess(res.data.user));
       navigate('/dashboard');
     } catch (err) {

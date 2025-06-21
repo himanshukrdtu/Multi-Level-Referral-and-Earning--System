@@ -64,7 +64,7 @@ export default function ProductPage() {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/transaction/purchase', {
+      const res = await axios.post('https://multi-level-referral-and-earning-system-geln.onrender.com/api/transaction/purchase', {
         userId: user._id,
         amount: totalPrice
       });

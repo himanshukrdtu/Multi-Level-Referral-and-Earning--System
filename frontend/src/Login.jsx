@@ -12,7 +12,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email });
+      const res = await axios.post('https://multi-level-referral-and-earning-system-geln.onrender.com/api/auth/login', { email });
       const user = res.data.user;
 
       dispatch(loginSuccess(user)); // ✅ user gets saved in Redux

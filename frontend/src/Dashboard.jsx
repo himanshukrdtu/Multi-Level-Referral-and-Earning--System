@@ -34,7 +34,7 @@ export default function Dashboard() {
 
     const fetchEarnings = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/earnings/${user._id}`);
+        const res = await axios.get(`https://multi-level-referral-and-earning-system-geln.onrender.com/api/earnings/${user._id}`);
         dispatch(setEarnings(res.data));
       } catch (err) {
         console.error('Error fetching earnings:', err);
@@ -43,7 +43,7 @@ export default function Dashboard() {
 
     const fetchNotifications = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/notifications/${user._id}`);
+        const res = await axios.get(`https://multi-level-referral-and-earning-system-geln.onrender.com/api/notifications/${user._id}`);
         setOldNotifications(res.data.notifications || []);
       } catch (err) {
         console.error('Error fetching notifications:', err);
@@ -55,7 +55,7 @@ export default function Dashboard() {
 
     socket.on('new-notification', (notification) => {
       setRecentNotifications((prev) => [notification, ...prev]);
-      axios.get(`http://localhost:5000/api/earnings/${user._id}`)
+      axios.get(`https://multi-level-referral-and-earning-system-geln.onrender.com/api/earnings/${user._id}`)
         .then((res) => {
           dispatch(setEarnings(res.data));
       })
