@@ -55,8 +55,15 @@ export default function Dashboard() {
 
     socket.on('new-notification', (notification) => {
       setRecentNotifications((prev) => [notification, ...prev]);
-      console.log('🔔 New notification:', notification);
-    });
+      axios.get(`http://localhost:5000/api/earnings/${user._id}`)
+        .then((res) => {
+          dispatch(setEarnings(res.data));
+      })
+        .catch((err) => {
+            console.error('Error updating earnings on notification:', err);
+      });
+            console.log('🔔 New notification:', notification);
+      });
 
     return () => {
       socket.off('new-notification');

@@ -36,7 +36,7 @@ const onlineUsers = new Map();
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
 
-  socket.on('register-user', (userId) => {
+  socket.on('register', (userId) => {
     onlineUsers.set(userId, socket.id);
     console.log(`User ${userId} registered with socket ${socket.id}`);
   });

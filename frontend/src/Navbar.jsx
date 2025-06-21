@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from './userSlice';
 import './Navbar.css';
-
+import { persistor } from './store';
 export default function Navbar() {
   const { isLoggedIn } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -12,6 +12,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     dispatch(logout());
+    persistor.purge();
     navigate('/login');
   };
 

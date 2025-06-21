@@ -42,6 +42,16 @@ RefnEarn is a full-stack **MERN** application that allows users to shop for prod
 
 ---
 
+##   Frontend pages
+
+### As it is for backend role so i was more focused on implementing the backend logics.
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+
 ## 📦 Getting Started
 
 ### 🔧 Backend Setup

@@ -1,10 +1,8 @@
- 
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { loginSuccess } from './userSlice';
 import { useNavigate, Link } from 'react-router-dom';
-import socket from './socket';
 import './Login.css';  
 
 export default function Login() {
@@ -17,10 +15,8 @@ export default function Login() {
       const res = await axios.post('http://localhost:5000/api/auth/login', { email });
       const user = res.data.user;
 
-      dispatch(loginSuccess(user));
-      socket.connect();
-      socket.emit('register-user', user._id);
-      navigate('/dashboard');
+      dispatch(loginSuccess(user)); // ✅ user gets saved in Redux
+      navigate('/dashboard');       // ✅ App.jsx handles socket registration
     } catch (err) {
       console.error(err);
       alert('Login failed');
