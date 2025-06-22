@@ -1,7 +1,9 @@
 # 🛍️ RefnEarn — Multi-Level Referral & Profit Sharing E-Commerce System
 
 RefnEarn is a full-stack **MERN** application that allows users to shop for products, refer others, and earn profits through a **two-level referral commission system**. The app features real-time **notifications** via **Socket.IO**, a responsive UI, and an intuitive user experience.
-
+---
+## Click here to try it out
+🔗 **Live Demo:** https://multi-level-referral-and-earning-system-1.onrender.com
 ---
 
 ## ✅ Features
